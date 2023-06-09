@@ -1,0 +1,303 @@
+:root {
+  --dark-color: #19283f;
+  --green-color: #33d1cc;
+  --white-color: #ffffff;
+  --red-color: #ff3150;
+  --yellow-color: #ffc400;
+  --section-color: #eff7fa;
+  --time-duration: 0.5s;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+/* Start Global classes */
+.main-title p {
+  margin-bottom: 1rem;
+}
+.main-title::after {
+  content: "";
+  height: 2px;
+  width: 120px;
+  background-color: var(--green-color);
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+/* End Global classes */
+/* Start navbar */
+.navbar {
+  background-color: var(--dark-color);
+}
+
+.navbar .navbar-nav .nav-link {
+  color: var(--white-color);
+  cursor: pointer;
+  transition: var(--time-duration);
+  -webkit-transition: var(--time-duration);
+  -moz-transition: var(--time-duration);
+  -ms-transition: var(--time-duration);
+  -o-transition: var(--time-duration);
+}
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link:focus {
+  color: var(--green-color);
+}
+
+.navbar .input-group input[type="text"] {
+  background-color: transparent;
+  border: none;
+  border: 1px solid var(--yellow-color);
+  color: var(--yellow-color);
+  border-radius: 20px 0 0 20px;
+  outline: none;
+  -webkit-border-radius: 20px 0 0 20px;
+  -moz-border-radius: 20px 0 0 20px;
+  -ms-border-radius: 20px 0 0 20px;
+  -o-border-radius: 20px 0 0 20px;
+}
+.navbar .input-group input[type="text"]:focus {
+  outline: none;
+}
+.navbar .input-group .btn-search {
+  background-color: var(--yellow-color);
+  border-radius: 0 20px 20px 0;
+  -webkit-border-radius: 0 20px 20px 0;
+  -moz-border-radius: 0 20px 20px 0;
+  -ms-border-radius: 0 20px 20px 0;
+  -o-border-radius: 0 20px 20px 0;
+}
+.navbar .input-group .btn-search:hover svg {
+  color: var(--red-color);
+}
+.navbar .input-group .btn-search {
+  outline: none !important;
+}
+.navbar .input-group .btn-search:focus {
+  box-shadow: none !important;
+}
+.navbar .input-group .btn-search svg {
+  color: var(--dark-color);
+}
+
+.navbar .navbar-toggler {
+  font-size: 25px;
+  color: var(--white-color);
+  border-color: var(--white-color);
+  /* border-color: none; */
+}
+.navbar .navbar-toggler:focus,
+.main-btn:focus {
+  box-shadow: none;
+}
+
+/* other way by using aria-expanded value */
+.navbar .navbar-toggler[aria-expanded="true"] {
+  color: var(--green-color);
+  border-color: var(--green-color);
+}
+/* Login btn */
+.main-btn {
+  background-color: var(--red-color);
+  color: var(--yellow-color);
+  padding: 0.5rem 2rem;
+  transition: var(--time-duration);
+  -webkit-transition: var(--time-duration);
+  -moz-transition: var(--time-duration);
+  -ms-transition: var(--time-duration);
+  -o-transition: var(--time-duration);
+}
+.main-btn:hover {
+  background-color: var(--yellow-color);
+  color: var(--dark-color);
+  padding: 0.5rem 2rem;
+}
+/* End navbar */
+
+/* Start Landing */
+.landing {
+  background-color: var(--dark-color);
+  min-height: calc(100vh - 72px);
+}
+/* End Landing */
+/* Start Features */
+.features .icon-holder {
+  height: 200px;
+}
+.features .icon-holder svg {
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+.features .icon-holder .number {
+  font-size: 12rem;
+  color: var(--section-color);
+}
+.features .icon-holder .icon {
+  color: var(--green-color);
+}
+.features .feat h4 {
+  color: var(--yellow-color);
+}
+/* End Features */
+/* Start our work  */
+.our-work {
+  background-color: var(--section-color);
+}
+.our-work ul li {
+  color: var(--dark-color);
+}
+.our-work ul li {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: var(--time-duration);
+  -webkit-transition: var(--time-duration);
+  -moz-transition: var(--time-duration);
+  -ms-transition: var(--time-duration);
+  -o-transition: var(--time-duration);
+}
+@media (max-width: 600px) {
+  .our-work ul li {
+    padding: 0.5rem 0.8rem;
+  }
+}
+.our-work ul .active {
+  background-color: var(--red-color);
+  color: var(--yellow-color);
+}
+.our-work ul li:not(.active):hover {
+  color: var(--red-color);
+}
+.our-work .box {
+  padding: 5px;
+  overflow: hidden;
+  position: relative;
+}
+.our-work .box::before {
+  content: attr(data-work);
+  position: absolute;
+  background-color: rgb(51 209 204 / 70%);
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--white-color);
+  transform: translateX(calc(-100% - 5px));
+  -webkit-transform: translateX(calc(-100% - 5px));
+  -moz-transform: translateX(calc(-100% - 5px));
+  -ms-transform: translateX(calc(-100% - 5px));
+  -o-transform: translateX(calc(-100% - 5px));
+  transition: var(--time-duration);
+  -webkit-transition: var(--time-duration);
+  -moz-transition: var(--time-duration);
+  -ms-transition: var(--time-duration);
+  -o-transition: var(--time-duration);
+}
+.our-work .box:hover::before {
+  transform: translateX(0);
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+}
+/* End our work  */
+
+/* Start Stuff */
+.stuff .description {
+  max-width: 500px;
+}
+/* End Stuff */
+/* Start Team */
+.team {
+  background-color: var(--section-color);
+}
+.team h2 {
+  color: var(--yellow-color);
+}
+.team .box h4 {
+  background-color: var(--green-color);
+  color: var(--white-color);
+}
+/* End Team */
+/* Start Project */
+.project {
+  background-color: var(--dark-color);
+}
+/* Start Project */
+/* There is no css style this section just Bootstrap classes in html */
+/* End Project */
+/* Start Blog */
+/* There is no css style this section just Bootstrap classes in html */
+/* End Blog */
+/* Start Subscribe */
+.subscribe {
+  background-color: var(--yellow-color);
+}
+.subscribe input[type="Email"] {
+  border: 0;
+  border-bottom: 1px solid var(--white-color);
+  color: var(--white-color);
+  outline: none;
+}
+.subscribe input[type="Email"]:focus {
+  outline: none;
+}
+.subscribe input::placeholder {
+  color: var(--white-color);
+}
+.subscribe .main-btn {
+  background-color: var(--dark-color);
+  color: var(--yellow-color);
+  /* text-transform: capitalize; */
+}
+/* End Subscribe */
+/* Start Footer */
+.footer {
+  background-color: var(--dark-color);
+}
+.footer .copyright > span {
+  color: var(--green-color);
+}
+.footer .copyright span:last-child {
+  color: var(--yellow-color);
+}
+.footer .links a {
+  transition: var(--time-duration);
+}
+.footer .links li a:hover {
+  color: var(--green-color) !important;
+}
+
+.footer .contact ul svg {
+  height: 20px;
+  width: 20px;
+}
+/* where will get these brands color value? go to this url -> https://brandcolors.net/ */
+.footer .facebook {
+  background-color: #1877f2;
+}
+.footer .twitter {
+  background-color: #1da1f2;
+}
+.footer .linkedin {
+  background-color: #0077b5;
+}
+.footer .youtube {
+  background-color: #ff0000;
+}
+/* End Footer */
